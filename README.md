@@ -1,3 +1,3 @@
 Modern JavaScript Loan Calculator
 
-![alt text](https://github.com/moElhaj/python-project-budget/blob/master/readme/details.JPG)
+![alt text](https://github.com/moElhaj/javascript-loan-calculator/blob/master/loan.JPG)
