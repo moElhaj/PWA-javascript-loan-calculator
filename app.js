@@ -1,3 +1,14 @@
+// PWA Configuration
+
+if ('serviceWorker' in navigator) {
+    try {
+        navigator.serviceWorker.register('serviceWorker.js');
+    } catch (error) {
+        console.log("Service Worker Registration Failed");
+    }
+}
+
+
 // class form
 class Loan {
     constructor(amount, interest, years) {
@@ -10,9 +21,9 @@ class Loan {
         var x = Math.pow(1 + this.interest, this.years);
         var monthly = (this.amount * x * this.interest) / (x - 1);
         var results = {
-            monthlyPayment : monthly.toFixed(2),
-            totalPrincaple : this.amount,
-            totalInterest : ((monthly * this.years) - this.amount).toFixed(2)
+            monthlyPayment: monthly.toFixed(2),
+            totalPrincaple: this.amount,
+            totalInterest: ((monthly * this.years) - this.amount).toFixed(2)
         }
         return results;
     }
@@ -30,7 +41,7 @@ document.querySelector('#calculateForm').addEventListener('submit', e => {
     results = form.calculate()
 
     //display result
-    if(isFinite(results.monthlyPayment)){
+    if (isFinite(results.monthlyPayment)) {
         document.querySelector('#error').style.display = 'none'
         document.querySelector('#calculation').innerHTML = `
         <p>Monthly Payments</p>
