@@ -42,14 +42,24 @@ document.querySelector('#calculateForm').addEventListener('submit', e => {
 
     //display result
     if (isFinite(results.monthlyPayment)) {
+        document.querySelector('.result').style.display = "flex";
         document.querySelector('#error').style.display = 'none'
         document.querySelector('#calculation').innerHTML = `
-        <p>Monthly Payments</p>
-        <h3><strong>${results.monthlyPayment}</strong></h3>
-        <ul>
-            <li>Total Principal Paid: ${results.totalPrincaple}</li>
-            <li>Total Interest Paid: ${results.totalInterest}</li>
-        </ul>
+        <table>
+            <tr>
+                <td>Monthly Payments</td>
+                <td>${results.monthlyPayment}</td>
+            </tr>
+            <tr>
+                <td>Total Principal Paid</td>
+                <td>${results.monthlyPayment}</td>
+            </tr>
+            <tr>
+                <td>Total Interest Paid</td>
+                <td>${results.totalInterest}</td>
+            </tr>
+        </table>
+        <button onClick="window.location.reload();">Calculate Again</button>
         `
     } else {
         document.querySelector('#error').style.display = 'block'
