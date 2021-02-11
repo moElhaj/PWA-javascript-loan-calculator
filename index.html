@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>Loan Calculator</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="/images/icons/icon-72x72.png" type="image/x-icon">
     <meta name="theme-color" content="#81D0E1">
@@ -16,63 +16,38 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="apple-touch-startup-image" href="/images/icons/icon-192x192.png">
     <link rel="apple-touch-icon" sizes="192x192" href="/images/icons/icon-192x192.png">
-
-
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-        }
-
-        p {
-            margin-bottom: .5rem !important;
-        }
-
-        .container {
-            padding-top: 5%;
-        }
-
-        .invalidNumber {
-            color: red;
-        }
-
-        .btn-primary {
-            color: #fff;
-            background-color: #81D0E1;
-            border-color: #81D0E1;
-        }
-
-        .btn-primary:hover {
-            background-color: #53c2db;
-            border-color: #53c2db;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="container d-flex flex-column">
-        <div class="row d-flex justify-content-center">
-            <form id="calculateForm">
-                <div class="form-group">
+    <div class="wrapper flex center">
+        <div class="content w-100 h-100">
+            <form id="calculateForm" class="flex flex-column">
+
+                <div class="form-block">
                     <label for="amount">Loan amount</label>
-                    <input type="text" class="form-control" id="amount" required>
+                    <input type="text" id="amount" required>
                 </div>
-                <div class="form-group">
+
+                <div class="form-block">
                     <label for="interest">Interest Rate %</label>
-                    <input type="text" class="form-control" id="interest" required>
+                    <input type="text" id="interest" required>
                 </div>
-                <div class="form-group">
+
+                <div class="form-block">
                     <label for="years">Loan Years</label>
-                    <input type="number" class="form-control" id="years" required>
+                    <input type="number" id="years" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Calculate</button>
+
+                <button type="submit">Calculate</button>
             </form>
-        </div>
-        <div class="row mt-3 d-flex justify-content-center">
-            <div class="text-center">
+
+            <div class="result flex center">
                 <div id="error" class="invalidNumber" style="display:none"></div>
                 <div id="calculation"></div>
             </div>
+
         </div>
+
     </div>
     <script src="app.js"></script>
 </body>
